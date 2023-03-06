@@ -154,3 +154,176 @@ i powinna zajmować większość dostępnej przestrzeni
         width: 960px;
     }
 }
+
+/*school.html*/
+/*Informacje o filmie w jednym rzędzie z odstępem od jumbotrona*/
+.school-summary {
+    display: flex;
+    margin-top: 16px;
+}
+/*Mniejsza okładka na małych ekranach*/
+.school-summary-cover {
+    object-fit: contain;
+    max-width: 200px;
+}
+/*Odstęp informacji o filmie od okładki*/
+.school-summary-info {
+    margin-left: 16px;
+}
+/*Oryginalny tytuł w kolorze szarym i odstęp pod nim*/
+.school-summary-original-title {
+    color: #9e9e9e;
+    margin-bottom: 16px;
+}
+/*Odstępy między poszczególnymi informacjami*/
+.school-summary-item {
+    margin: 8px 0;
+}
+/*Większy tytuł filmu*/
+.school-summary-title {
+    font-size: 2rem;
+}
+/*Wyśrodkowanie głosowania*/
+.school-rating-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 200px;
+}
+
+/*Wyśrodkowanie tekstu Twoja ocena*/
+.school-rating-form > p {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+/*Powiększenie i wyśrodkowanie średniej oceny*/
+.school-rating-value {
+    font-size: 4rem;
+    text-align: center;
+}
+/*Styl dla przycisków z ocenami*/
+.school-rating-button {
+    background-color: #ffc107;
+    border: 0;
+    padding: 4px;
+    font-size: 1.6rem;
+    border-radius: 4px;
+    opacity: 0.8;
+}
+/*Usunięcie przezroczystości po najechaniu na przycisk*/
+.school-rating-button:hover {
+    opacity: 1;
+}
+/*Odstępy między elementami w ramce z głosowaniem*/
+.school-rating-container > * {
+    margin: 8px 0;
+}
+/*Ramka dla boxu z głosowaniem*/
+.school-section {
+    margin-top: 16px;
+    padding: 16px;
+    border: 1px #6d6d6d solid;
+}
+/*school.html END*/
+
+/*Odstęp pod nagłówkami sekcji*/
+.school-section-heading {
+    margin-bottom: 8px;
+}
+
+/*Responsive school.html*/
+@media only screen and (min-width: 992px) {
+    /*Dodajemy rozkład elastyczny, elementy będą wyświetlane w jednym wierszu*/
+    .school {
+        display: flex;
+        justify-content: space-between;
+    }
+    /*Przyciski powinny wyświetlać się obok siebie, bez zawijania wiersza*/
+    .school-rating-buttons {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    /*Większe odstępy między przyciskami*/
+    .school-rating-button {
+        font-size: 1.2rem;
+        margin: 0 4px;
+    }
+}
+
+
+
+
+/*teacher.html*/
+/*Informacje o filmie w jednym rzędzie z odstępem od jumbotrona*/
+.teacher-summary {
+    display: flex;
+    margin-top: 16px;
+}
+/*Mniejsza okładka na małych ekranach*/
+.teacher-summary-cover {
+    object-fit: contain;
+    max-width: 200px;
+}
+/*Odstęp informacji o filmie od okładki*/
+.teacher-summary-info {
+    margin-left: 16px;
+}
+/*Oryginalny tytuł w kolorze szarym i odstęp pod nim*/
+.teacher-summary-original-title {
+    color: #9e9e9e;
+    margin-bottom: 16px;
+}
+/*Odstępy między poszczególnymi informacjami*/
+.teacher-summary-item {
+    margin: 8px 0;
+}
+/*Większy tytuł filmu*/
+.teacher-summary-title {
+    font-size: 2rem;
+}
+/*Wyśrodkowanie głosowania*/
+.teacher-rating-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 200px;
+}
+
+/*Wyśrodkowanie tekstu Twoja ocena*/
+.teacher-rating-form > p {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+/*Powiększenie i wyśrodkowanie średniej oceny*/
+.teacher-rating-value {
+    font-size: 4rem;
+    text-align: center;
+}
+/*Styl dla przycisków z ocenami*/
+.teacher-rating-button {
+    background-color: #ffc107;
+    border: 0;
+    padding: 4px;
+    font-size: 1.6rem;
+    border-radius: 4px;
+    opacity: 0.8;
+}
+/*Usunięcie przezroczystości po najechaniu na przycisk*/
+.teacher-rating-button:hover {
+    opacity: 1;
+}
+/*Odstępy między elementami w ramce z głosowaniem*/
+.teacher-rating-container > * {
+    margin: 8px 0;
+}
+/*Ramka dla boxu z głosowaniem*/
+.teacher-section {
+    margin-top: 16px;
+    padding: 16px;
+    border: 1px #6d6d6d solid;
+}
+/*teacher.html END*/

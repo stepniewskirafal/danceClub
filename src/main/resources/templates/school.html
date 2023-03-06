@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zajęcia taneczne - nazwa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+          integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <script defer src="../static/scripts/common.js"></script>
+    <link rel="stylesheet" href="../static/styles/main.css">
+</head>
+<body>
+<div class="container">
+    <ul class="menu">
+        <li class="menu-logo-container">
+            <a href="#" th:href="@{/}">
+                <i class="fas fa-film logo"></i> DanceClub
+            </a>
+        </li>
+        <li class="menu-toggle">
+            <a href="#"><i id="toggle-icon" class="far fa-plus-square"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="#">Gatunki</a>
+        </li>
+        <li class="menu-item">
+            <a href="#">Top10</a>
+        </li>
+        <li class="menu-item">
+            <a href="#">Zaloguj się</a>
+        </li>
+    </ul>
+    <header class="jumbotron">
+        <h1 class="jumbotron-header">Dance Club</h1>
+        <p class="jumbotron-description">
+            Witaj w najlepszej bazie zajęć tanecznych w sieci. Oceniaj wydarzenia i dyskutuj o swojej pasji.
+        </p>
+    </header>
+    <main class="main-content">
+        <section class="school">
+            <!-- Podsumowanie -->
+            <div class="school-summary">
+                <!-- Plakat -->
+                <img src="../static/img/poster-placeholder.png"
+                     alt="tytuł filmu"
+                     class="school-summary-cover"
+                />
+                <!-- informacje o filmie -->
+                <div class="school-summary-info">
+                    <h1 class="school-summary-title">Szkoła tańca Raj</h1>
+                    <p class="school-summary-item">Adres szkoły</p>
+                    <p class="school-summary-item" >
+                        Jakiś tam opis szkoły tańca
+                    </p>
+                </div>
+            </div>
+            <!-- Ocena -->
+            <div class="school-rating-container school-section">
+                <h2 class="school-section-heading">Ocena</h2>
+                <div>
+                    <p class="school-rating-value" th:text="${avgRating}">4.0</p>
+                    <p>Liczba ocen: 134</p>
+                </div>
+                <form action="#" class="school-rating-form">
+                    <!-- Identyfikator filmu, na który głosujemy-->
+                    <p>Twoja ocena</p>
+                    <input type="hidden" name="schoolId">
+                    <div class="school-rating-buttons">
+                        <button class="school-rating-button"><i class="fa-solid fa-star"></i></button>
+                        <button class="school-rating-button"><i class="fa-solid fa-star"></i></button>
+                        <button class="school-rating-button"><i class="fa-solid fa-star"></i></button>
+                        <button class="school-rating-button"><i class="fa-solid fa-star"></i></button>
+                        <button class="school-rating-button"><i class="fa-regular fa-star"></i></button>
+                    </div>
+                </form>
+                <p><a href="#">Zaloguj się</a>, aby oddać głos</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>DanceClub 2023 <i class="fas fa-copyright"></i> DanceClub.pl</p>
+    </footer>
+</div>
+</body>
+</html>
