@@ -1,0 +1,74 @@
+package pl.danceclub.app.domain.unit;
+
+import jakarta.persistence.*;
+import pl.danceclub.app.domain.school.School;
+import pl.danceclub.app.domain.teacher.Teacher;
+
+@Entity
+public class Unit {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String name;
+    private boolean promoted;
+
+    @ManyToOne
+    @JoinColumn(name = "school_id", referencedColumnName="id")
+    private School school;
+
+    @ManyToOne
+    @JoinColumn(name = "female_teacher_id", referencedColumnName="id")
+    private Teacher female_teacher;
+
+    @ManyToOne
+    @JoinColumn(name = "male_teacher_id", referencedColumnName="id")
+    private Teacher male_teacher;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public boolean isPromoted() {
+        return promoted;
+    }
+
+    public void setPromoted(boolean promoted) {
+        this.promoted = promoted;
+    }
+
+    public School getSchool() {
+        return school;
+    }
+
+    public void setSchool(School school) {
+        this.school = school;
+    }
+
+    public Teacher getFemale_teacher() {
+        return female_teacher;
+    }
+
+    public void setFemale_teacher(Teacher female_teacher) {
+        this.female_teacher = female_teacher;
+    }
+
+    public Teacher getMale_teacher() {
+        return male_teacher;
+    }
+
+    public void setMale_teacher(Teacher male_teacher) {
+        this.male_teacher = male_teacher;
+    }
+}
