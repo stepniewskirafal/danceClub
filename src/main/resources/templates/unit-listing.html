@@ -1,21 +1,9 @@
 <!DOCTYPE html>
 <!-- Dodana przestrzeń nazw th -->
-<html lang="pl" xmlns:th="https://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>DanceClub</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-          integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-          crossorigin="anonymous"
-          referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-    <!-- Dynamicznie budowany adres do skryptu JS i arkusza stylów -->
-    <script defer src="../static/scripts/common.js" th:src="@{/scripts/common.js}"></script>
-    <link rel="stylesheet" href="../static/styles/main.css" th:href="@{/styles/main.css}">
-</head>
+<html lang="pl"
+      xmlns:th="https://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
 <body>
 <div class="container">
     <ul class="menu">
@@ -120,9 +108,6 @@
             </li>
         </ul>
     </main>
-    <footer class="footer">
-        <p>DanceClub 2023 <i class="fas fa-copyright"></i> DanceClub.pl</p>
-    </footer>
 </div>
 </body>
 </html>
