@@ -6,34 +6,7 @@
       layout:decorate="~{layout}">
 <body>
 <div class="container">
-    <ul class="menu">
-        <li class="menu-logo-container">
-            <!-- Dynamicznie budowany adres do strony głównej -->
-            <a href="#" th:href="@{/}">
-                <i class="fas fa-music logo"></i> DanceClub
-            </a>
-        </li>
-        <li class="menu-toggle">
-            <a href="#"><i id="toggle-icon" class="far fa-plus-square"></i></a>
-        </li>
-        <li class="menu-item">
-            <a href="#">Style tańca</a>
-        </li>
-        <li class="menu-item">
-            <a href="#">Top10</a>
-        </li>
-        <li class="menu-item">
-            <a href="#">Zaloguj się</a>
-        </li>
-    </ul>
-    <header class="jumbotron">
-        <h1 class="jumbotron-header">Dance Club</h1>
-        <p class="jumbotron-description">
-            Witaj w najlepszej bazie zajęć tanecznych w sieci. Oceniaj wydarzenia i dyskutuj o swojej pasji.
-        </p>
-    </header>
-    <main class="main-content">
-        <h1>TEST</h1>
+    <main class="main-content" layout:fragment="content">
         <!-- Nagłówek pobieramy z modelu -->
         <h2 class="list-heading" th:text="${heading}">Promowane zajęcia / Nazwa Kategorii</h2>
         <!-- Opis pobieramy z modelu    th:text="{description}"    -->
