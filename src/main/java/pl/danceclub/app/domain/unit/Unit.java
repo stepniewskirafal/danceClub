@@ -1,6 +1,7 @@
 package pl.danceclub.app.domain.unit;
 
 import jakarta.persistence.*;
+import pl.danceclub.app.domain.genre.Genre;
 import pl.danceclub.app.domain.school.School;
 import pl.danceclub.app.domain.teacher.Teacher;
 
@@ -23,6 +24,10 @@ public class Unit {
     @ManyToOne
     @JoinColumn(name = "male_teacher_id", referencedColumnName="id")
     private Teacher male_teacher;
+
+    @ManyToOne
+    @JoinColumn(name = "genre_id", referencedColumnName="id")
+    private Genre genre_id;
 
     public Long getId() {
         return id;
@@ -70,5 +75,13 @@ public class Unit {
 
     public void setMale_teacher(Teacher male_teacher) {
         this.male_teacher = male_teacher;
+    }
+
+    public Genre getGenre() {
+        return genre_id;
+    }
+
+    public void setGenre(Genre dance_genre) {
+        this.genre_id = genre_id;
     }
 }

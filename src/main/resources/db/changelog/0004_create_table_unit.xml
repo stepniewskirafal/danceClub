@@ -14,6 +14,7 @@
             <column name="school_id"          type="INT"/>
             <column name="female_teacher_id"  type="INT"/>
             <column name="male_teacher_id"    type="INT"/>
+            <column name="genre_id"    type="INT"/>
         </createTable>
     </changeSet>
 </databaseChangeLog>
