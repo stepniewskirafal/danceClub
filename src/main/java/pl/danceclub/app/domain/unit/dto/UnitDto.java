@@ -8,20 +8,24 @@ public class UnitDto {
     private Long     school_id;
     private String   school_name;
     private String   female_teacher;
+    private Long   female_teacher_id;
     private String   male_teacher;
+    private Long   male_teacher_id;
     private String   short_description;
     private String   description;
     private String   genre_name;
     private Long     genre_id;
 
-    public UnitDto(Long id, String name, boolean promoted, Long school_id, String school_name, String female_teacher, String male_teacher, String short_description, String description, String genre_name, Long genre_id) {
+    public UnitDto(Long id, String name, boolean promoted, Long school_id, String school_name, String female_teacher, Long female_teacher_id, String male_teacher, Long male_teacher_id, String short_description, String description, String genre_name, Long genre_id) {
         this.id = id;
         this.name = name;
         this.promoted = promoted;
         this.school_id = school_id;
         this.school_name = school_name;
         this.female_teacher = female_teacher;
+        this.female_teacher_id = female_teacher_id;
         this.male_teacher = male_teacher;
+        this.male_teacher_id = male_teacher_id;
         this.short_description = short_description;
         this.description = description;
         this.genre_name = genre_name;
@@ -114,5 +118,21 @@ public class UnitDto {
 
     public void setGenre_name(String genre_name) {
         this.genre_name = genre_name;
+    }
+
+    public Long getFemale_teacher_id() {
+        return female_teacher_id;
+    }
+
+    public void setFemale_teacher_id(Long female_teacher_id) {
+        this.female_teacher_id = female_teacher_id;
+    }
+
+    public Long getMale_teacher_id() {
+        return male_teacher_id;
+    }
+
+    public void setMale_teacher_id(Long male_teacher_id) {
+        this.male_teacher_id = male_teacher_id;
     }
 }

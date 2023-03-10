@@ -1,10 +1,8 @@
 package pl.danceclub.app.domain.teacher;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import pl.danceclub.app.domain.genre.Genre;
 
 @Entity
 public class Teacher {
@@ -17,7 +15,10 @@ public class Teacher {
     private String description;
     private String youtube_trailer_id;
     private boolean promoted;
-    private Long genre_id;
+    @ManyToOne
+    @JoinColumn(name = "genre_id", referencedColumnName="id")
+    private Genre genre;
+
 
     public Long getId() {
         return id;
@@ -75,11 +76,11 @@ public class Teacher {
         this.promoted = promoted;
     }
 
-    public Long getGenre_id() {
-        return genre_id;
+    public Genre getGenre() {
+        return genre;
     }
 
-    public void setGenre_id(Long genre_id) {
-        this.genre_id = genre_id;
+    public void setGenre(Genre genre) {
+        this.genre = genre;
     }
 }

@@ -8,9 +8,9 @@ public class TeacherDto {
     private String description;
     private String youtube_trailer_id;
     private boolean promoted;
-    private Long genre_id;
+    private String genre_name;
 
-    public TeacherDto(Long id, String name, String surname, String short_description, String description, String youtube_trailer_id, boolean promoted, Long genre_id) {
+    public TeacherDto(Long id, String name, String surname, String short_description, String description, String youtube_trailer_id, boolean promoted, String genre_name) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -18,7 +18,7 @@ public class TeacherDto {
         this.description = description;
         this.youtube_trailer_id = youtube_trailer_id;
         this.promoted = promoted;
-        this.genre_id = genre_id;
+        this.genre_name = genre_name;
     }
 
     public Long getId() {
@@ -77,11 +77,11 @@ public class TeacherDto {
         this.promoted = promoted;
     }
 
-    public Long getGenre_id() {
-        return genre_id;
+    public String getGenre_name() {
+        return genre_name;
     }
 
-    public void setGenre_id(Long genre_id) {
-        this.genre_id = genre_id;
+    public void setGenre_name(String genre_name) {
+        this.genre_name = genre_name;
     }
 }

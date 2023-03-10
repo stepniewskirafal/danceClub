@@ -1,11 +1,15 @@
 package pl.danceclub.app.domain.teacher;
 
 import org.springframework.stereotype.Service;
-import pl.danceclub.app.domain.teacher.Teacher;
+import pl.danceclub.app.domain.genre.Genre;
+import pl.danceclub.app.domain.genre.GenreRepository;
 import pl.danceclub.app.domain.teacher.dto.TeacherDto;
+
+import java.util.Optional;
 
 @Service
 public class TeacherDtoMapper {
+
     static TeacherDto map(Teacher teacher) {
 
         return new TeacherDto(
@@ -16,7 +20,7 @@ public class TeacherDtoMapper {
                 teacher.getDescription(),
                 teacher.getYoutube_trailer_id(),
                 teacher.isPromoted(),
-                teacher.getGenre_id()
+                teacher.getGenre().getName()
         );
     }
 }

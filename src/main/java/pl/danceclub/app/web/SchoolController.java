@@ -1,9 +1,11 @@
 package pl.danceclub.app.web;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.server.ResponseStatusException;
 import pl.danceclub.app.domain.school.Dto.SchoolDto;
 import pl.danceclub.app.domain.school.SchoolService;
 
@@ -19,8 +21,9 @@ public class SchoolController {
 
     @GetMapping("/school/{id}")
     public String getMovie(@PathVariable long id, Model model) {
-        Optional<SchoolDto> schoolDtoOptional = schoolService.findById(id);
-        schoolDtoOptional.ifPresent(x -> model.addAttribute("school", x));
+        SchoolDto schoolDto = schoolService.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+        model.addAttribute("school", schoolDto);
         return "school";
     }
 }
