@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!-- Dodana przestrzeń nazw th -->
+<html lang="pl"
+      xmlns:th="https://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<body>
+<head>
+    <!-- Ustawiamy tytuł -->
+    <title th:text="|${unit.name} - DanceClub|">Zajęcia taneczne - DanceClub</title>
+</head>
+
+<div class="container">
+    <main class="main-content" layout:fragment="content">
+        <section class="unit">
+            <!-- Podsumowanie -->
+            <div class="unit-summary">
+                <!-- Ustawiamy adres i opis plakatu -->
+                <img src="../static/img/poster-placeholder.png"
+                     th:src="@{/img/poster-placeholder.png}"
+                     alt="nazwa zajec"
+                     th:alt="${unit.name}"
+                     class="unit-summary-cover"
+                />
+                <!-- informacje o zajęciach -->
+                <div class="unit-summary-info">
+                    <!-- Ustawiamy opis zajec -->
+                    <!-- Ustawiamy link do strony zajęć, np. /unit/2 -->
+                    <h1 class="unit-summary-item" th:text="${unit.name}">Nazwa zajec</h1>
+                    <p class="unit-summary-item">Szkoła: <a href="#"
+                                                                 th:href="@{|/school/${unit.school_id}|}"
+                                                                 th:text="${unit.school_name}">Szkoła Raj</a>
+                    </p>
+                    <p class="unit-summary-item" >Instruktorzy
+                        <a href="#"
+                           th:href="@{|/teacher/${unit.id}|}"
+                           th:text="|${unit.female_teacher}|"
+                        >Ewa</a>
+                        <a>i</a>
+                        <a href="#"
+                           th:href="@{|/teacher/${unit.id}|}"
+                           th:text="|${unit.male_teacher}|"
+                        >Adam</a>
+                    </p>
+                    <p class="unit-summary-title" th:text="${unit.genre_name}">Styl tańca</p>
+
+                    <p class="unit-summary-item" th:text="${unit.short_description}">
+                        Podróż odważnego hobbita i jego towarzyszy w poszukiwaniu pierścienia.
+                    </p>
+                </div>
+            </div>
+            <!-- Ocena -->
+            <div class="unit-rating-container unit-section">
+                <h2 class="unit-section-heading">Ocena</h2>
+                <div>
+                    <p class="unit-rating-value" th:text="${avgRating}">4.0</p>
+                    <p style="text-align: center">Liczba ocen: 134</p>
+                </div>
+                <form action="#" class="unit-rating-form">
+                    <!-- Identyfikator zajec, na który głosujemy-->
+                    <p>Twoja ocena</p>
+                    <input type="hidden" name="unitId">
+                    <div class="unit-rating-buttons">
+                        <button class="unit-rating-button"><i class="fa-solid fa-star"></i></button>
+                        <button class="unit-rating-button"><i class="fa-solid fa-star"></i></button>
+                        <button class="unit-rating-button"><i class="fa-solid fa-star"></i></button>
+                        <button class="unit-rating-button"><i class="fa-solid fa-star"></i></button>
+                        <button class="unit-rating-button"><i class="fa-regular fa-star"></i></button>
+                    </div>
+                </form>
+                <p><a href="#">Zaloguj się</a>, aby oddać głos</p>
+            </div>
+        </section>
+        <!-- opis -->
+        <section class="unit-section">
+            <h2 class="unit-section-heading">Opis</h2>
+            <!-- Ustawiamy pełny opis -->
+            <p th:text="${unit.description}">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
+                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.
+                Donec lacinia congue felis in faucibus.</p>
+        </section>
+    </main>
+</div>
+</body>
+</html>

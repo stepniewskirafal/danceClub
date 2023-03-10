@@ -5,17 +5,35 @@ public class UnitDto {
     private Long     id;
     private String   name;
     private boolean  promoted;
-    private String     school;
-    private String     female_teacher;
-    private String     male_teacher;
+    private Long     school_id;
+    private String   school_name;
+    private String   female_teacher;
+    private String   male_teacher;
+    private String   short_description;
+    private String   description;
+    private String   genre_name;
+    private Long     genre_id;
 
-    public UnitDto(Long id, String name, boolean promoted, String school, String female_teacher, String male_teacher) {
+    public UnitDto(Long id, String name, boolean promoted, Long school_id, String school_name, String female_teacher, String male_teacher, String short_description, String description, String genre_name, Long genre_id) {
         this.id = id;
         this.name = name;
         this.promoted = promoted;
-        this.school = school;
+        this.school_id = school_id;
+        this.school_name = school_name;
         this.female_teacher = female_teacher;
         this.male_teacher = male_teacher;
+        this.short_description = short_description;
+        this.description = description;
+        this.genre_name = genre_name;
+        this.genre_id = genre_id;
+    }
+
+    public Long getGenre_id() {
+        return genre_id;
+    }
+
+    public void setGenre_id(Long genre_id) {
+        this.genre_id = genre_id;
     }
 
     public Long getId() {
@@ -42,12 +60,20 @@ public class UnitDto {
         this.promoted = promoted;
     }
 
-    public String getSchool() {
-        return school;
+    public Long getSchool_id() {
+        return school_id;
     }
 
-    public void setSchool(String school) {
-        this.school = school;
+    public void setSchool_id(Long school_id) {
+        this.school_id = school_id;
+    }
+
+    public String getSchool_name() {
+        return school_name;
+    }
+
+    public void setSchool_name(String school_name) {
+        this.school_name = school_name;
     }
 
     public String getFemale_teacher() {
@@ -64,5 +90,29 @@ public class UnitDto {
 
     public void setMale_teacher(String male_teacher) {
         this.male_teacher = male_teacher;
+    }
+
+    public String getShort_description() {
+        return short_description;
+    }
+
+    public void setShort_description(String short_description) {
+        this.short_description = short_description;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getGenre_name() {
+        return genre_name;
+    }
+
+    public void setGenre_name(String genre_name) {
+        this.genre_name = genre_name;
     }
 }

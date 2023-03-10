@@ -14,7 +14,9 @@
             <column name="school_id"          type="INT"/>
             <column name="female_teacher_id"  type="INT"/>
             <column name="male_teacher_id"    type="INT"/>
-            <column name="genre_id"    type="INT"/>
+            <column name="genre_id"           type="INT"/>
+            <column name="short_description"  type="VARCHAR(200)"/>
+            <column name="description"        type="VARCHAR(10000)"/>
         </createTable>
     </changeSet>
 </databaseChangeLog>

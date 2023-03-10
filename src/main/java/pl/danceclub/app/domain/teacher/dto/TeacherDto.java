@@ -1,15 +1,6 @@
-package pl.danceclub.app.domain.teacher;
+package pl.danceclub.app.domain.teacher.dto;
 
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
-@Entity
-public class Teacher {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class TeacherDto {
     private Long id;
     private String name;
     private String surname;
@@ -18,6 +9,17 @@ public class Teacher {
     private String youtube_trailer_id;
     private boolean promoted;
     private Long genre_id;
+
+    public TeacherDto(Long id, String name, String surname, String short_description, String description, String youtube_trailer_id, boolean promoted, Long genre_id) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.short_description = short_description;
+        this.description = description;
+        this.youtube_trailer_id = youtube_trailer_id;
+        this.promoted = promoted;
+        this.genre_id = genre_id;
+    }
 
     public Long getId() {
         return id;

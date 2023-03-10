@@ -29,6 +29,33 @@ public class Unit {
     @JoinColumn(name = "genre_id", referencedColumnName="id")
     private Genre genre_id;
 
+    private String short_description;
+    private String description;
+
+    public Genre getGenre_id() {
+        return genre_id;
+    }
+
+    public void setGenre_id(Genre genre_id) {
+        this.genre_id = genre_id;
+    }
+
+    public String getShort_description() {
+        return short_description;
+    }
+
+    public void setShort_description(String short_description) {
+        this.short_description = short_description;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public Long getId() {
         return id;
     }

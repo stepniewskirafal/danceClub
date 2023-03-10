@@ -27,12 +27,30 @@
                     <div class="dance-list-item-content">
                         <h3 class="dance-list-item-title">
                             <!-- Link do strony pojedynczego filmu typu /film/5 -->
-                            <a href="#" th:href="@{|/film/${unit.id}|}" th:text="${unit.name}">Nazwa zajęć</a>
+                            <a href="#"
+                               th:href="@{|/unit/${unit.id}|}"
+                               th:text="${unit.name}"
+                            >Nazwa zajęć</a>
                         </h3>
                         <!-- Instruktorzy -->
-                        <h4 th:text="|${unit.female_teacher} oraz ${unit.male_teacher}|">Adam i Ewa</h4>
+                        <h4 class="unit-summary-item">
+                            <a href="#"
+                               th:href="@{|/teacher/${unit.id}|}"
+                               th:text="|${unit.female_teacher}|"
+                            >Ewa</a>
+                            <a>i</a>
+                            <a href="#"
+                               th:href="@{|/teacher/${unit.id}|}"
+                               th:text="|${unit.male_teacher}|"
+                            >Adam</a>
+                        </h4>
                         <!-- Miejsce zajęć -->
-                        <p th:text="${unit.school}">Szkoła Raj</p>
+                        <p class="unit-summary-item">Szkoła: <a href="#"
+                                                                th:href="@{|/school/${unit.school_id}|}"
+                                                                th:text="${unit.school_name}">Szkoła Raj</a>
+                        </p>
+
+
                     </div>
                     <div class="dance-list-item-rating">
                         <i class="fas fa-star"></i>

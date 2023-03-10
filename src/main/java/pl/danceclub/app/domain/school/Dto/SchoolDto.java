@@ -1,18 +1,18 @@
-package pl.danceclub.app.domain.school;
+package pl.danceclub.app.domain.school.Dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+public class SchoolDto {
 
-@Entity
-public class School {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String address;
     private String description;
+
+    public SchoolDto(Long id, String name, String address, String description) {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+        this.description = description;
+    }
 
     public Long getId() {
         return id;
