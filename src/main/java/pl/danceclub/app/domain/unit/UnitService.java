@@ -1,6 +1,7 @@
 package pl.danceclub.app.domain.unit;
 
 import org.springframework.stereotype.Service;
+import pl.danceclub.app.domain.genre.dto.GenreDto;
 import pl.danceclub.app.domain.unit.dto.UnitDto;
 
 import java.util.List;
@@ -29,6 +30,13 @@ public class UnitService {
 
     public List<UnitDto> findAll(){
         return StreamSupport.stream(unitRepository.findAll().spliterator(), false)
+                .map(UnitDtoMapper::map)
+                .collect(Collectors.toList());
+    }
+
+    public List<UnitDto> findAllByGenre(String name){
+        return unitRepository.findAllByGenre_Name(name)
+                .stream()
                 .map(UnitDtoMapper::map)
                 .collect(Collectors.toList());
     }

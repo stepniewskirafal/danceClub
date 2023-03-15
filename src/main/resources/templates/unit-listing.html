@@ -10,7 +10,7 @@
         <!-- Nagłówek pobieramy z modelu -->
         <h2 class="list-heading" th:text="${heading}">Promowane zajęcia / Nazwa Kategorii</h2>
         <!-- Opis pobieramy z modelu    th:text="{description}"    -->
-        <p class="list-description" >Opis sekcji, przykładowo opis kategorii, albo strony głównej</p>
+        <p class="list-description"  th:text="${description}">Opis sekcji, przykładowo opis kategorii, albo strony głównej</p>
         <!-- Zostawiamy tylko pierwszy element <li> -->
         <ul class="dance-list" th:remove="all-but-first">
             <!-- Pętla po wszystkich filmach z modelu -->

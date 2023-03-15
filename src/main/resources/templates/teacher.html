@@ -25,7 +25,12 @@
                     <!-- Ustawiamy opis nauczyciela -->
 
                     <h1 class="teacher-summary-title" th:text="|${teacher.name} ${teacher.surname}|">Imie i nazwisko</h1>
-                    <p class="teacher-summary-item" th:text="${teacher.genre_name}">Bachata</p>
+                    <p class="teacher-summary-item" >
+                        <a href="#"
+                           th:href="@{|/genre/${teacher.genre_name}|}"
+                           th:text="|${teacher.genre_name}|"
+                        >Gatunek tańca</a>
+                    </p>
                     <p class="teacher-summary-item" th:text="${teacher.short_description}">
                         Jakiś tam opis nauczyciela tańca
                     </p>

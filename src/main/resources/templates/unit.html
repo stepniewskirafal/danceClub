@@ -42,7 +42,12 @@
                            th:text="|${unit.male_teacher}|"
                         >Adam</a>
                     </p>
-                    <p class="unit-summary-title" th:text="${unit.genre_name}">Styl tańca</p>
+                    <p class="unit-summary-item" >
+                        <a href="#"
+                           th:href="@{|/genre/${unit.genre_name}|}"
+                           th:text="${unit.genre_name}"
+                        >Gatunek tańca</a>
+                    </p>
 
                     <p class="unit-summary-item" th:text="${unit.short_description}">
                         Podróż odważnego hobbita i jego towarzyszy w poszukiwaniu pierścienia.

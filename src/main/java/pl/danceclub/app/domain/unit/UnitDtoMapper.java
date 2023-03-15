@@ -19,8 +19,8 @@ public class UnitDtoMapper {
                 unit.getMale_teacher().getId(),
                 unit.getShort_description(),
                 unit.getDescription(),
-                unit.getGenre_id().getName(),
-                unit.getGenre_id().getId()
+                unit.getGenre().getName(),
+                unit.getGenre().getId()
         );
     }
 }
