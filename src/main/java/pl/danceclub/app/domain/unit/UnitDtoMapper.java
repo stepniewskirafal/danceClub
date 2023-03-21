@@ -10,7 +10,6 @@ public class UnitDtoMapper {
         return new UnitDto(
                 unit.getId(),
                 unit.getName(),
-                unit.isPromoted(),
                 unit.getSchool().getId(),
                 unit.getSchool().getName(),
                 unit.getFemale_teacher().getName() + " " + unit.getFemale_teacher().getSurname(),
@@ -20,7 +19,9 @@ public class UnitDtoMapper {
                 unit.getShort_description(),
                 unit.getDescription(),
                 unit.getGenre().getName(),
-                unit.getGenre().getId()
+                unit.getGenre().getId(),
+                unit.getPoster(),
+                unit.isPromoted()
         );
     }
 }

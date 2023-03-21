@@ -6,16 +6,17 @@
         https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.2.xsd">
     <changeSet id="0002-1" author="danceClub">
         <createTable tableName="school">
-            <column name="id" type="BIGINT" autoIncrement="true">
+            <column name="id"           type="BIGINT" autoIncrement="true">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
-            <column name="name" type="VARCHAR(100)">
+            <column name="name"         type="VARCHAR(100)">
                 <constraints unique="true"/>
             </column>
-            <column name="address" type="VARCHAR(100)">
+            <column name="address"      type="VARCHAR(100)">
                 <constraints unique="true"/>
             </column>
-            <column name="description" type="VARCHAR(1000)"/>
+            <column name="description"  type="VARCHAR(1000)"/>
+            <column name="poster"       type="VARCHAR(100)"/>
         </createTable>
     </changeSet>
 </databaseChangeLog>

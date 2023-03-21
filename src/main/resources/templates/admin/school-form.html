@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pl"
+      xmlns:th="https://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Dodaj nową szkołę tańca</title>
+</head>
+<body>
+<main class="main-content" layout:fragment="content">
+    <h2 class="list-heading">Dodaj nową szkołę tańca</h2>
+    <form action="" method="post" class="mc-form" th:object="${school}">
+        <label for="schoolName">Nazwa</label>
+        <input type="text" id="schoolName" placeholder="np. Abra Dance studio" th:field="*{name}">
+        <label for="schoolDescription">Opis - max 500 znaków</label>
+        <textarea id="schoolDescription" rows="5" th:field="*{description}"></textarea>
+        <label for="schoolAddress">Address - max 100 znaków</label>
+        <textarea id="schoolAddress" rows="5" th:field="*{address}"></textarea>
+        <label for="poster">Plakat</label>
+        <input type="file" id="poster" th:field="*{poster}" accept="image/png, image/jpeg">
+        <button type="submit">Dodaj</button>
+    </form>
+</main>
+</body>
+</html>

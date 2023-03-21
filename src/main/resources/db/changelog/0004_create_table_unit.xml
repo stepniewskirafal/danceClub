@@ -10,13 +10,14 @@
                 <constraints nullable="false" primaryKey="true"/>
             </column>
             <column name="name"               type="VARCHAR(100)"/>
-            <column name="promoted"           type="BOOLEAN"/>
             <column name="school_id"          type="INT"/>
             <column name="female_teacher_id"  type="INT"/>
             <column name="male_teacher_id"    type="INT"/>
             <column name="genre_id"           type="INT"/>
             <column name="short_description"  type="VARCHAR(200)"/>
             <column name="description"        type="VARCHAR(10000)"/>
+            <column name="poster"             type="VARCHAR(100)"/>
+            <column name="promoted"           type="BOOLEAN"/>
         </createTable>
     </changeSet>
 </databaseChangeLog>

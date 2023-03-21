@@ -11,6 +11,7 @@ public class Unit {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    private String poster;
     private boolean promoted;
 
     @ManyToOne
@@ -32,6 +33,7 @@ public class Unit {
     private String short_description;
     private String description;
 
+
     public Long getId() {
         return id;
     }
@@ -46,6 +48,14 @@ public class Unit {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getPoster() {
+        return poster;
+    }
+
+    public void setPoster(String poster) {
+        this.poster = poster;
     }
 
     public boolean isPromoted() {

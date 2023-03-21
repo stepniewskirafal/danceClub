@@ -19,6 +19,7 @@ public class TeacherDtoMapper {
                 teacher.getShort_description(),
                 teacher.getDescription(),
                 teacher.getYoutube_trailer_id(),
+                teacher.getPoster(),
                 teacher.isPromoted(),
                 teacher.getGenre().getName()
         );

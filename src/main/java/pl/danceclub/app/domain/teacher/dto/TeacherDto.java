@@ -7,16 +7,18 @@ public class TeacherDto {
     private String short_description;
     private String description;
     private String youtube_trailer_id;
+    private String poster;
     private boolean promoted;
     private String genre_name;
 
-    public TeacherDto(Long id, String name, String surname, String short_description, String description, String youtube_trailer_id, boolean promoted, String genre_name) {
+    public TeacherDto(Long id, String name, String surname, String short_description, String description, String youtube_trailer_id, String poster, boolean promoted, String genre_name) {
         this.id = id;
         this.name = name;
         this.surname = surname;
         this.short_description = short_description;
         this.description = description;
         this.youtube_trailer_id = youtube_trailer_id;
+        this.poster = poster;
         this.promoted = promoted;
         this.genre_name = genre_name;
     }
@@ -67,6 +69,14 @@ public class TeacherDto {
 
     public void setYoutube_trailer_id(String youtube_trailer_id) {
         this.youtube_trailer_id = youtube_trailer_id;
+    }
+
+    public String getPoster() {
+        return poster;
+    }
+
+    public void setPoster(String poster) {
+        this.poster = poster;
     }
 
     public boolean isPromoted() {

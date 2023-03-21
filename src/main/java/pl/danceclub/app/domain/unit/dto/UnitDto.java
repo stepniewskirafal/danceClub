@@ -4,7 +4,6 @@ public class UnitDto {
 
     private Long     id;
     private String   name;
-    private boolean  promoted;
     private Long     school_id;
     private String   school_name;
     private String   female_teacher;
@@ -15,11 +14,12 @@ public class UnitDto {
     private String   description;
     private String   genre_name;
     private Long     genre_id;
+    private String poster;
+    private boolean  promoted;
 
-    public UnitDto(Long id, String name, boolean promoted, Long school_id, String school_name, String female_teacher, Long female_teacher_id, String male_teacher, Long male_teacher_id, String short_description, String description, String genre_name, Long genre_id) {
+    public UnitDto(Long id, String name, Long school_id, String school_name, String female_teacher, Long female_teacher_id, String male_teacher, Long male_teacher_id, String short_description, String description, String genre_name, Long genre_id, String poster, boolean promoted) {
         this.id = id;
         this.name = name;
-        this.promoted = promoted;
         this.school_id = school_id;
         this.school_name = school_name;
         this.female_teacher = female_teacher;
@@ -30,14 +30,8 @@ public class UnitDto {
         this.description = description;
         this.genre_name = genre_name;
         this.genre_id = genre_id;
-    }
-
-    public Long getGenre_id() {
-        return genre_id;
-    }
-
-    public void setGenre_id(Long genre_id) {
-        this.genre_id = genre_id;
+        this.poster = poster;
+        this.promoted = promoted;
     }
 
     public Long getId() {
@@ -54,14 +48,6 @@ public class UnitDto {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public boolean isPromoted() {
-        return promoted;
-    }
-
-    public void setPromoted(boolean promoted) {
-        this.promoted = promoted;
     }
 
     public Long getSchool_id() {
@@ -88,12 +74,28 @@ public class UnitDto {
         this.female_teacher = female_teacher;
     }
 
+    public Long getFemale_teacher_id() {
+        return female_teacher_id;
+    }
+
+    public void setFemale_teacher_id(Long female_teacher_id) {
+        this.female_teacher_id = female_teacher_id;
+    }
+
     public String getMale_teacher() {
         return male_teacher;
     }
 
     public void setMale_teacher(String male_teacher) {
         this.male_teacher = male_teacher;
+    }
+
+    public Long getMale_teacher_id() {
+        return male_teacher_id;
+    }
+
+    public void setMale_teacher_id(Long male_teacher_id) {
+        this.male_teacher_id = male_teacher_id;
     }
 
     public String getShort_description() {
@@ -120,19 +122,27 @@ public class UnitDto {
         this.genre_name = genre_name;
     }
 
-    public Long getFemale_teacher_id() {
-        return female_teacher_id;
+    public Long getGenre_id() {
+        return genre_id;
     }
 
-    public void setFemale_teacher_id(Long female_teacher_id) {
-        this.female_teacher_id = female_teacher_id;
+    public void setGenre_id(Long genre_id) {
+        this.genre_id = genre_id;
     }
 
-    public Long getMale_teacher_id() {
-        return male_teacher_id;
+    public String getPoster() {
+        return poster;
     }
 
-    public void setMale_teacher_id(Long male_teacher_id) {
-        this.male_teacher_id = male_teacher_id;
+    public void setPoster(String poster) {
+        this.poster = poster;
+    }
+
+    public boolean isPromoted() {
+        return promoted;
+    }
+
+    public void setPromoted(boolean promoted) {
+        this.promoted = promoted;
     }
 }

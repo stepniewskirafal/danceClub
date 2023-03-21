@@ -6,12 +6,14 @@ public class SchoolDto {
     private String name;
     private String address;
     private String description;
+    private String poster;
 
-    public SchoolDto(Long id, String name, String address, String description) {
+    public SchoolDto(Long id, String name, String address, String description, String poster) {
         this.id = id;
         this.name = name;
         this.address = address;
         this.description = description;
+        this.poster = poster;
     }
 
     public Long getId() {
@@ -44,5 +46,13 @@ public class SchoolDto {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getPoster() {
+        return poster;
+    }
+
+    public void setPoster(String poster) {
+        this.poster = poster;
     }
 }

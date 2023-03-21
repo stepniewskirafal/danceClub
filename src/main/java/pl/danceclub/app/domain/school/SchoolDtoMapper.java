@@ -10,7 +10,8 @@ public class SchoolDtoMapper {
                 school.getId(),
                 school.getName(),
                 school.getAddress(),
-                school.getDescription()
+                school.getDescription(),
+                school.getPoster()
         );
     }
 }

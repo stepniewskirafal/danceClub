@@ -17,7 +17,7 @@
             <div class="school-summary">
                 <!-- Ustawiamy adres i opis plakatu -->
                 <img src="../static/img/poster-placeholder.png"
-                     th:src="@{/img/poster-placeholder.png}"
+                     th:src="${school.poster ne null} ? @{|/img/${school.poster}|} : @{/img/poster-placeholder.png}"
                      alt="nazwa zajec"
                      th:alt="${school.name}"
                      class="school-summary-cover"

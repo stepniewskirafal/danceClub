@@ -14,11 +14,11 @@ public class Teacher {
     private String short_description;
     private String description;
     private String youtube_trailer_id;
+    private String poster;
     private boolean promoted;
     @ManyToOne
     @JoinColumn(name = "genre_id", referencedColumnName="id")
     private Genre genre;
-
 
     public Long getId() {
         return id;
@@ -74,6 +74,14 @@ public class Teacher {
 
     public void setPromoted(boolean promoted) {
         this.promoted = promoted;
+    }
+
+    public String getPoster() {
+        return poster;
+    }
+
+    public void setPoster(String poster) {
+        this.poster = poster;
     }
 
     public Genre getGenre() {

@@ -13,6 +13,7 @@ public class School {
     private String name;
     private String address;
     private String description;
+    private String poster;
 
     public Long getId() {
         return id;
@@ -44,5 +45,13 @@ public class School {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getPoster() {
+        return poster;
+    }
+
+    public void setPoster(String poster) {
+        this.poster = poster;
     }
 }
