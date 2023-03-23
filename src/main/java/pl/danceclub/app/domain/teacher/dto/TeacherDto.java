@@ -1,15 +1,15 @@
 package pl.danceclub.app.domain.teacher.dto;
 
 public class TeacherDto {
-    private Long id;
-    private String name;
-    private String surname;
-    private String short_description;
-    private String description;
-    private String youtube_trailer_id;
-    private String poster;
+    private Long    id;
+    private String  name;
+    private String  surname;
+    private String  short_description;
+    private String  description;
+    private String  youtube_trailer_id;
+    private String  poster;
     private boolean promoted;
-    private String genre_name;
+    private String  genre_name;
 
     public TeacherDto(Long id, String name, String surname, String short_description, String description, String youtube_trailer_id, String poster, boolean promoted, String genre_name) {
         this.id = id;

@@ -2,11 +2,11 @@ package pl.danceclub.app.domain.school.Dto;
 
 public class SchoolDto {
 
-    private Long id;
-    private String name;
-    private String address;
-    private String description;
-    private String poster;
+    private Long    id;
+    private String  name;
+    private String  address;
+    private String  description;
+    private String  poster;
 
     public SchoolDto(Long id, String name, String address, String description, String poster) {
         this.id = id;

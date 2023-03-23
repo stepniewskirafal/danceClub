@@ -2,20 +2,20 @@ package pl.danceclub.app.domain.unit.dto;
 
 public class UnitDto {
 
-    private Long     id;
-    private String   name;
-    private Long     school_id;
-    private String   school_name;
-    private String   female_teacher;
-    private Long   female_teacher_id;
-    private String   male_teacher;
-    private Long   male_teacher_id;
-    private String   short_description;
-    private String   description;
-    private String   genre_name;
-    private Long     genre_id;
-    private String poster;
-    private boolean  promoted;
+    private Long    id;
+    private String  name;
+    private Long    school_id;
+    private String  school_name;
+    private String  female_teacher;
+    private Long    female_teacher_id;
+    private String  male_teacher;
+    private Long    male_teacher_id;
+    private String  short_description;
+    private String  description;
+    private String  genre_name;
+    private Long    genre_id;
+    private String  poster;
+    private boolean promoted;
 
     public UnitDto(Long id, String name, Long school_id, String school_name, String female_teacher, Long female_teacher_id, String male_teacher, Long male_teacher_id, String short_description, String description, String genre_name, Long genre_id, String poster, boolean promoted) {
         this.id = id;

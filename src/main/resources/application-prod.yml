@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/danceClub
+    username: root
+    password: admin
+  liquibase:
+    contexts: prod
+  web:
+    resources:
+      static-locations: classpath:/static/,file:/Users/rafal/IdeaProjects/spring/0-BProjekt/ProjektDanceClub/uploads
+app:
+  storage:
+    location: /Users/rafal/IdeaProjects/spring/0-BProjekt/ProjektDanceClub/uploads

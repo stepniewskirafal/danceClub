@@ -8,13 +8,13 @@ import pl.danceclub.app.domain.genre.Genre;
 public class Teacher {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String name;
-    private String surname;
-    private String short_description;
-    private String description;
-    private String youtube_trailer_id;
-    private String poster;
+    private Long    id;
+    private String  name;
+    private String  surname;
+    private String  short_description;
+    private String  description;
+    private String  youtube_trailer_id;
+    private String  poster;
     private boolean promoted;
     @ManyToOne
     @JoinColumn(name = "genre_id", referencedColumnName="id")

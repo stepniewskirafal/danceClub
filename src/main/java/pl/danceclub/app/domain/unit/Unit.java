@@ -9,10 +9,12 @@ import pl.danceclub.app.domain.teacher.Teacher;
 public class Unit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String name;
-    private String poster;
+    private Long    id;
+    private String  name;
+    private String  poster;
     private boolean promoted;
+    private String  short_description;
+    private String  description;
 
     @ManyToOne
     @JoinColumn(name = "school_id", referencedColumnName="id")
@@ -29,10 +31,6 @@ public class Unit {
     @ManyToOne
     @JoinColumn(name = "genre_id", referencedColumnName="id")
     private Genre genre;
-
-    private String short_description;
-    private String description;
-
 
     public Long getId() {
         return id;

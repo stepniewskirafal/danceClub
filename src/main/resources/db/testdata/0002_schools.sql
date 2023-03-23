@@ -1,0 +1,2 @@
+insert into School (name, address, description) values ('Salsa Libre', 'Żelazna 59, 00-823 Warszawa', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse venenatis vel risus sit amet luctus.');
+insert into School (name, address, description) values ('Abra Studio', 'al. Jana Pawła II 11, 00-823 Warszawa', 'Aliquam sit amet pulvinar metus. Duis pellentesque faucibus ex id convallis. ');
