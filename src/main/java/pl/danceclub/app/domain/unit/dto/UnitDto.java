@@ -15,9 +15,12 @@ public class UnitDto {
     private String  genre_name;
     private Long    genre_id;
     private String  poster;
+    private double avgRating;
+    private int ratingCount;
+
     private boolean promoted;
 
-    public UnitDto(Long id, String name, Long school_id, String school_name, String female_teacher, Long female_teacher_id, String male_teacher, Long male_teacher_id, String short_description, String description, String genre_name, Long genre_id, String poster, boolean promoted) {
+    public UnitDto(Long id, String name, Long school_id, String school_name, String female_teacher, Long female_teacher_id, String male_teacher, Long male_teacher_id, String short_description, String description, String genre_name, Long genre_id, String poster, double avgRating, int ratingCount, boolean promoted) {
         this.id = id;
         this.name = name;
         this.school_id = school_id;
@@ -31,6 +34,8 @@ public class UnitDto {
         this.genre_name = genre_name;
         this.genre_id = genre_id;
         this.poster = poster;
+        this.avgRating = avgRating;
+        this.ratingCount = ratingCount;
         this.promoted = promoted;
     }
 
@@ -144,5 +149,21 @@ public class UnitDto {
 
     public void setPromoted(boolean promoted) {
         this.promoted = promoted;
+    }
+
+    public double getAvgRating() {
+        return avgRating;
+    }
+
+    public void setAvgRating(double avgRating) {
+        this.avgRating = avgRating;
+    }
+
+    public int getRatingCount() {
+        return ratingCount;
+    }
+
+    public void setRatingCount(int ratingCount) {
+        this.ratingCount = ratingCount;
     }
 }

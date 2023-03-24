@@ -2,8 +2,12 @@ package pl.danceclub.app.domain.unit;
 
 import jakarta.persistence.*;
 import pl.danceclub.app.domain.genre.Genre;
+import pl.danceclub.app.domain.rating.Rating;
 import pl.danceclub.app.domain.school.School;
 import pl.danceclub.app.domain.teacher.Teacher;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Unit {
@@ -31,6 +35,9 @@ public class Unit {
     @ManyToOne
     @JoinColumn(name = "genre_id", referencedColumnName="id")
     private Genre genre;
+
+    @OneToMany(mappedBy = "unit")
+    private Set<Rating> ratings = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -110,5 +117,13 @@ public class Unit {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Set<Rating> getRatings() {
+        return ratings;
+    }
+
+    public void setRatings(Set<Rating> ratings) {
+        this.ratings = ratings;
     }
 }

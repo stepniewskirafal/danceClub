@@ -1,11 +1,17 @@
 package pl.danceclub.app.domain.unit;
 
 import org.springframework.stereotype.Service;
+import pl.danceclub.app.domain.rating.Rating;
 import pl.danceclub.app.domain.unit.dto.UnitDto;
 
 @Service
 public class UnitDtoMapper {
     static UnitDto map(Unit unit) {
+        double avgRating = unit.getRatings().stream()
+                .map(Rating::getRating)
+                .mapToDouble(val -> val)
+                .average().orElse(0);
+        int ratingCount = unit.getRatings().size();
 
         return new UnitDto(
                 unit.getId(),
@@ -21,6 +27,8 @@ public class UnitDtoMapper {
                 unit.getGenre().getName(),
                 unit.getGenre().getId(),
                 unit.getPoster(),
+                avgRating,
+                ratingCount,
                 unit.isPromoted()
         );
     }
