@@ -21,7 +21,7 @@ public class Rating {
     public Rating() {
     }
 
-    public Rating( User user, Unit movie, Integer rating) {
+    public Rating( User user, Unit unit, Integer rating) {
         this.user = user;
         this.unit = unit;
         this.rating = rating;

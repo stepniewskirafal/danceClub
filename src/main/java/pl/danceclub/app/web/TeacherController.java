@@ -20,7 +20,8 @@ public class TeacherController {
     }
 
     @GetMapping("/teacher/{id}")
-    public String getMovie(@PathVariable long id, Model model) {
+    public String getTeacher(@PathVariable long id,
+                             Model model) {
         TeacherDto teacherDto = teacherService.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
         model.addAttribute("teacher", teacherDto);

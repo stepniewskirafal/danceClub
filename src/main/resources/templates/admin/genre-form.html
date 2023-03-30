@@ -12,8 +12,8 @@
     <form action="#" th:action="@{/admin/add-genre}" method="post" class="mc-form" th:object="${genre}">
         <label for="genreName">Nazwa</label>
         <input type="text" id="genreName" placeholder="np. Zouk" th:field="*{name}">
-        <label for="movieShortDescription">Opis - max 500 znaków</label>
-        <textarea id="movieShortDescription" rows="5" th:field="*{description}"></textarea>
+        <label for="genreShortDescription">Opis - max 500 znaków</label>
+        <textarea id="genreShortDescription" rows="5" th:field="*{description}"></textarea>
         <button type="submit">Dodaj</button>
     </form>
 </main>

@@ -24,7 +24,7 @@ public class UnitController {
     }
 
     @GetMapping("/unit/{id}")
-    public String getMovie(@PathVariable long id,
+    public String getUnit(@PathVariable long id,
                            Model model,
                            Authentication authentication) {
         UnitDto unitDto = unitService.findById(id)

@@ -16,12 +16,12 @@ public class RatingController {
     }
 
     @PostMapping("/rate-unit")
-    public String addMovieRating(@RequestParam long movieId,
-                                 @RequestParam int rating,
-                                 @RequestHeader String referer,
-                                 Authentication authentication) {
+    public String addUnitRating(@RequestParam long unitId,
+                                @RequestParam int rating,
+                                @RequestHeader String referer,
+                                Authentication authentication) {
         String currentUserEmail = authentication.getName();
-        ratingService.addOrUpdateRating(currentUserEmail, movieId, rating);
+        ratingService.addOrUpdateRating(currentUserEmail, unitId, rating);
         return "redirect:" + referer;
     }
 }
