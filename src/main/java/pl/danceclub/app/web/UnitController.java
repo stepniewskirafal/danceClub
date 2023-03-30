@@ -1,29 +1,44 @@
 package pl.danceclub.app.web;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.server.ResponseStatusException;
+import pl.danceclub.app.domain.rating.RatingService;
 import pl.danceclub.app.domain.unit.UnitService;
 import pl.danceclub.app.domain.unit.dto.UnitDto;
 
-import java.util.Optional;
+import java.lang.reflect.InvocationTargetException;
 
 @Controller
 public class UnitController {
     private final UnitService unitService;
+    private final RatingService ratingService;
 
-    public UnitController(UnitService unitService) {
+    public UnitController(UnitService unitService, RatingService ratingService) {
         this.unitService = unitService;
+        this.ratingService = ratingService;
     }
 
     @GetMapping("/unit/{id}")
-    public String getMovie(@PathVariable long id, Model model) {
+    public String getMovie(@PathVariable long id,
+                           Model model,
+                           Authentication authentication) {
         UnitDto unitDto = unitService.findById(id)
                         .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
         model.addAttribute("unit", unitDto);
+        //Jeżeli użytkownik jest zalogowany
+        if (authentication != null) {
+            String currentUserEmail = authentication.getName();
+            //to wyszukujemy jego głos
+            Integer rating = ratingService.getUserRatingForUnit(currentUserEmail, id).orElse(0);
+            //i zapisujemy go w modelu
+            model.addAttribute("userRating", rating);
+        }
+        //model.addAttribute("userRating", rating);
         return "unit";
     }
 

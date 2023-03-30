@@ -22,7 +22,7 @@ public class RatingService {
     }
 
     public void addOrUpdateRating(String userEmail, long unitId, int rating) {
-        Rating ratingToSaveOrUpdate = ratingRepository.findByUser_EmailAndUser(userEmail, unitId)
+        Rating ratingToSaveOrUpdate = ratingRepository.findByUser_EmailAndUnit_id(userEmail, unitId)
                 .orElseGet(Rating::new);
         User user = userRepository.findByEmail(userEmail).orElseThrow();
         Unit unit = unitRepository.findById(unitId).orElseThrow();
@@ -32,8 +32,9 @@ public class RatingService {
         ratingRepository.save(ratingToSaveOrUpdate);
     }
 
-    public Optional<Integer> getUserRatingForMovie(String userEmail, long unitId) {
-        return ratingRepository.findByUser_EmailAndUser(userEmail, unitId)
+    public Optional<Integer> getUserRatingForUnit(String userEmail, long unitId) {
+        return ratingRepository
+                .findByUser_EmailAndUnit_id(userEmail, unitId)
                 .map(Rating::getRating);
     }
 }
