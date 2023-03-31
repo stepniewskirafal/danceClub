@@ -12,6 +12,7 @@ import pl.danceclub.app.domain.unit.UnitService;
 import pl.danceclub.app.domain.unit.dto.UnitDto;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.List;
 
 @Controller
 public class UnitController {
@@ -42,5 +43,12 @@ public class UnitController {
         return "unit";
     }
 
-
+    @GetMapping("/top10Classes")
+    public String findTop10(Model model) {
+        List<UnitDto> top10Movies = unitService.findTopUnits(10);
+        model.addAttribute("heading", "TOP10 zajęć tancznych");
+        model.addAttribute("description", "Zajęcia najlepiej oceniane przez uczestników");
+        model.addAttribute("units", top10Movies);
+        return "unit-listing";
+    }
 }

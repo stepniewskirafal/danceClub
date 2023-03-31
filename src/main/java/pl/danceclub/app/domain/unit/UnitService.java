@@ -1,5 +1,6 @@
 package pl.danceclub.app.domain.unit;
 
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import pl.danceclub.app.domain.genre.dto.GenreDto;
 import pl.danceclub.app.domain.unit.dto.UnitDto;
@@ -39,5 +40,12 @@ public class UnitService {
                 .stream()
                 .map(UnitDtoMapper::map)
                 .collect(Collectors.toList());
+    }
+
+    public List<UnitDto> findTopUnits(int size) {
+        Pageable page = Pageable.ofSize(size);
+        return unitRepository.findTopByRating(page).stream()
+                .map(UnitDtoMapper::map)
+                .toList();
     }
 }

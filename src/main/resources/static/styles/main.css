@@ -72,7 +72,7 @@ i powinna zajmować większość dostępnej przestrzeni
 
 /*Jumbotron START*/
 .jumbotron {
-    background-image: url("sylwetki_tancerzy.png");
+    background-image: url("../img/sylwetki_tancerzy80.png");
     background-position: center;
     background-repeat: no-repeat;
     padding: 2rem;
