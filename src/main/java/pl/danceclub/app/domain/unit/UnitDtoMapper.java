@@ -8,7 +8,7 @@ import pl.danceclub.app.domain.unit.dto.UnitDto;
 public class UnitDtoMapper {
     static UnitDto map(Unit unit) {
         double avgRating = unit.getRatings().stream()
-                .map(Rating::getRating)
+                .map(Rating::getUnit_rate)
                 .mapToDouble(val -> val)
                 .average().orElse(0);
         int ratingCount = unit.getRatings().size();

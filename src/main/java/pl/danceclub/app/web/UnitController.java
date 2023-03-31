@@ -39,7 +39,6 @@ public class UnitController {
             //i zapisujemy go w modelu
             model.addAttribute("userRating", rating);
         }
-        //model.addAttribute("userRating", rating);
         return "unit";
     }
 

@@ -5,7 +5,7 @@ import pl.danceclub.app.domain.unit.Unit;
 import pl.danceclub.app.user.User;
 
 @Entity
-@Table(name = "unit_rating")
+@Table(name = "ratings")
 public class Rating {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,15 +16,15 @@ public class Rating {
     @ManyToOne
     @JoinColumn(name = "unit_id")
     private Unit unit;
-    private Integer rating;
+    private Integer unit_rate;
 
     public Rating() {
     }
 
-    public Rating( User user, Unit unit, Integer rating) {
+    public Rating( User user, Unit unit, Integer unit_rate) {
         this.user = user;
         this.unit = unit;
-        this.rating = rating;
+        this.unit_rate = unit_rate;
     }
 
     public Long getId() {
@@ -51,11 +51,11 @@ public class Rating {
         this.unit = unit;
     }
 
-    public Integer getRating() {
-        return rating;
+    public Integer getUnit_rate() {
+        return unit_rate;
     }
 
-    public void setRating(Integer rating) {
-        this.rating = rating;
+    public void setUnit_rate(Integer unit_rate) {
+        this.unit_rate = unit_rate;
     }
 }

@@ -13,6 +13,6 @@ import java.util.List;
 public interface UnitRepository extends CrudRepository<Unit, Long> {
     List<Unit> findAllByPromotedIsTrue();
     List<Unit> findAllByGenre_Name(String name);
-    @Query("select u from Unit u join u.ratings r group by u order by avg(r.rating) desc")
+    @Query("select u from Unit u join u.ratings r group by u order by avg(r.unit_rate) desc")
     List<Unit> findTopByRating(Pageable page);
 }

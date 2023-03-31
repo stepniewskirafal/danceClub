@@ -21,20 +21,20 @@ public class RatingService {
         this.unitRepository = unitRepository;
     }
 
-    public void addOrUpdateRating(String userEmail, long unitId, int rating) {
+    public void addOrUpdateRating(String userEmail, long unitId, int unitRate) {
         Rating ratingToSaveOrUpdate = ratingRepository.findByUser_EmailAndUnit_id(userEmail, unitId)
                 .orElseGet(Rating::new);
         User user = userRepository.findByEmail(userEmail).orElseThrow();
         Unit unit = unitRepository.findById(unitId).orElseThrow();
         ratingToSaveOrUpdate.setUser(user);
         ratingToSaveOrUpdate.setUnit(unit);
-        ratingToSaveOrUpdate.setRating(rating);
+        ratingToSaveOrUpdate.setUnit_rate(unitRate);
         ratingRepository.save(ratingToSaveOrUpdate);
     }
 
     public Optional<Integer> getUserRatingForUnit(String userEmail, long unitId) {
         return ratingRepository
                 .findByUser_EmailAndUnit_id(userEmail, unitId)
-                .map(Rating::getRating);
+                .map(Rating::getUnit_rate);
     }
 }

@@ -1,5 +1,5 @@
 insert into
-    unit_rating (user_id, unit_id, rating)
+    ratings (user_id, unit_id, unit_rate)
 values
     (1, 1, 3),
     (1, 2, 4),

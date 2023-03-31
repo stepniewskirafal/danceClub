@@ -17,11 +17,11 @@ public class RatingController {
 
     @PostMapping("/rate-unit")
     public String addUnitRating(@RequestParam long unitId,
-                                @RequestParam int rating,
+                                @RequestParam int unitRate,
                                 @RequestHeader String referer,
                                 Authentication authentication) {
         String currentUserEmail = authentication.getName();
-        ratingService.addOrUpdateRating(currentUserEmail, unitId, rating);
+        ratingService.addOrUpdateRating(currentUserEmail, unitId, unitRate);
         return "redirect:" + referer;
     }
 }

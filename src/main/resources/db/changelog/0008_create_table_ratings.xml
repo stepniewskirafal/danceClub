@@ -5,30 +5,30 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.2.xsd">
     <changeSet id="0004-1" author="danceClub">
-        <createTable tableName="unit_rating">
+        <createTable tableName="ratings">
             <column name="id" type="BIGINT" autoIncrement="true">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
             <column name="user_id" type="BIGINT">
                 <constraints nullable="false"
-                             foreignKeyName="fk_unit_rating_user_id"
+                             foreignKeyName="fk_ratings_user_id"
                              referencedTableName="users"
                              referencedColumnNames="id"
                 />
             </column>
             <column name="unit_id" type="BIGINT">
                 <constraints nullable="false"
-                             foreignKeyName="fk_unit_rating_unit_id"
+                             foreignKeyName="fk_ratings_unit_id"
                              referencedTableName="unit"
                              referencedColumnNames="id"
                 />
             </column>
-            <column name="rating" type="INT">
+            <column name="unit_rate" type="INT">
                 <constraints nullable="false"/>
             </column>
         </createTable>
-        <addUniqueConstraint constraintName="unique_unit_rating"
-                             tableName="unit_rating"
+        <addUniqueConstraint constraintName="unique_ratings"
+                             tableName="ratings"
                              columnNames="user_id, unit_id"
         />
     </changeSet>
