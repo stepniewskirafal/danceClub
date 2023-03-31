@@ -16,11 +16,11 @@ public class UnitDto {
     private Long    genre_id;
     private String  poster;
     private double avgRating;
-    private int ratingCount;
+    private long ratingCount;
 
     private boolean promoted;
 
-    public UnitDto(Long id, String name, Long school_id, String school_name, String female_teacher, Long female_teacher_id, String male_teacher, Long male_teacher_id, String short_description, String description, String genre_name, Long genre_id, String poster, double avgRating, int ratingCount, boolean promoted) {
+    public UnitDto(Long id, String name, Long school_id, String school_name, String female_teacher, Long female_teacher_id, String male_teacher, Long male_teacher_id, String short_description, String description, String genre_name, Long genre_id, String poster, double avgRating, long ratingCount, boolean promoted) {
         this.id = id;
         this.name = name;
         this.school_id = school_id;
@@ -159,7 +159,7 @@ public class UnitDto {
         this.avgRating = avgRating;
     }
 
-    public int getRatingCount() {
+    public long getRatingCount() {
         return ratingCount;
     }
 

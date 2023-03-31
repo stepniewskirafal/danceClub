@@ -24,7 +24,6 @@
                 />
             </column>
             <column name="unit_rate" type="INT">
-                <constraints nullable="false"/>
             </column>
         </createTable>
         <addUniqueConstraint constraintName="unique_ratings"
