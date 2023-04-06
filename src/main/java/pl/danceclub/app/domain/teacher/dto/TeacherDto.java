@@ -10,8 +10,10 @@ public class TeacherDto {
     private String  poster;
     private boolean promoted;
     private String  genre_name;
+    private double avgRating;
+    private long ratingCount;
 
-    public TeacherDto(Long id, String name, String surname, String short_description, String description, String youtube_trailer_id, String poster, boolean promoted, String genre_name) {
+    public TeacherDto(Long id, String name, String surname, String short_description, String description, String youtube_trailer_id, String poster, boolean promoted, String genre_name, double avgRating, long ratingCount) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -21,6 +23,8 @@ public class TeacherDto {
         this.poster = poster;
         this.promoted = promoted;
         this.genre_name = genre_name;
+        this.avgRating = avgRating;
+        this.ratingCount = ratingCount;
     }
 
     public Long getId() {
@@ -93,5 +97,21 @@ public class TeacherDto {
 
     public void setGenre_name(String genre_name) {
         this.genre_name = genre_name;
+    }
+
+    public double getAvgRating() {
+        return avgRating;
+    }
+
+    public void setAvgRating(double avgRating) {
+        this.avgRating = avgRating;
+    }
+
+    public long getRatingCount() {
+        return ratingCount;
+    }
+
+    public void setRatingCount(long ratingCount) {
+        this.ratingCount = ratingCount;
     }
 }

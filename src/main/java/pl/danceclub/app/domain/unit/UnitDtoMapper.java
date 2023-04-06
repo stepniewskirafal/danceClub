@@ -4,11 +4,6 @@ import org.springframework.stereotype.Service;
 import pl.danceclub.app.domain.rating.Rating;
 import pl.danceclub.app.domain.unit.dto.UnitDto;
 
-import java.util.Arrays;
-import java.util.Objects;
-import java.util.Set;
-import java.util.stream.Stream;
-
 @Service
 public class UnitDtoMapper {
     static UnitDto map(Unit unit) {
@@ -18,7 +13,7 @@ public class UnitDtoMapper {
                 .mapToDouble(val -> val)
                 .average().orElse(0);
         long ratingCount = unit.getRatings().stream()
-                .map(x -> x.getUnit_rate())
+                .map(Rating::getUnit_rate)
                 .filter(x -> x != null)
                 .count();
 

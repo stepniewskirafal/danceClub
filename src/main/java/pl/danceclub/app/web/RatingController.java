@@ -21,7 +21,17 @@ public class RatingController {
                                 @RequestHeader String referer,
                                 Authentication authentication) {
         String currentUserEmail = authentication.getName();
-        ratingService.addOrUpdateRating(currentUserEmail, unitId, unitRate);
+        ratingService.addOrUpdateUnitRating(currentUserEmail, unitId, unitRate);
+        return "redirect:" + referer;
+    }
+
+    @PostMapping("/rate-teacher")
+    public String addTeacherRating(@RequestParam long teacherId,
+                                   @RequestParam int teacherRate,
+                                   @RequestHeader String referer,
+                                   Authentication authentication) {
+        String currentUserEmail = authentication.getName();
+        ratingService.addOrUpdateTeacherRating(currentUserEmail, teacherId, teacherRate);
         return "redirect:" + referer;
     }
 }

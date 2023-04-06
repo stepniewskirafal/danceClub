@@ -1,16 +1,25 @@
 package pl.danceclub.app.domain.teacher;
 
 import org.springframework.stereotype.Service;
-import pl.danceclub.app.domain.genre.Genre;
-import pl.danceclub.app.domain.genre.GenreRepository;
+import pl.danceclub.app.domain.rating.Rating;
 import pl.danceclub.app.domain.teacher.dto.TeacherDto;
-
-import java.util.Optional;
 
 @Service
 public class TeacherDtoMapper {
 
     static TeacherDto map(Teacher teacher) {
+        double avgRating = teacher.getRatings()
+                .stream()
+                .map(Rating::getTeacher_rate)
+                .filter(x->x!=null)
+                .mapToDouble(x -> x)
+                .average().orElse(0);
+
+        long ratingCount = teacher.getRatings()
+                .stream()
+                .map(Rating::getTeacher_rate)
+                .filter(x -> x != null)
+                .count();
 
         return new TeacherDto(
                 teacher.getId(),
@@ -21,7 +30,9 @@ public class TeacherDtoMapper {
                 teacher.getYoutube_trailer_id(),
                 teacher.getPoster(),
                 teacher.isPromoted(),
-                teacher.getGenre().getName()
+                teacher.getGenre().getName(),
+                avgRating,
+                ratingCount
         );
     }
 }

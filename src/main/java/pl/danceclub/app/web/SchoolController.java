@@ -9,8 +9,6 @@ import org.springframework.web.server.ResponseStatusException;
 import pl.danceclub.app.domain.school.Dto.SchoolDto;
 import pl.danceclub.app.domain.school.SchoolService;
 
-import java.util.Optional;
-
 @Controller
 public class SchoolController {
     private final SchoolService schoolService;

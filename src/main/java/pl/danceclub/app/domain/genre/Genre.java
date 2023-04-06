@@ -1,9 +1,6 @@
 package pl.danceclub.app.domain.genre;
 
 import jakarta.persistence.*;
-import pl.danceclub.app.domain.unit.Unit;
-
-import java.util.Collection;
 
 @Entity
 public class Genre {

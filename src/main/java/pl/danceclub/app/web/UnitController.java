@@ -11,7 +11,6 @@ import pl.danceclub.app.domain.rating.RatingService;
 import pl.danceclub.app.domain.unit.UnitService;
 import pl.danceclub.app.domain.unit.dto.UnitDto;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 @Controller

@@ -3,6 +3,10 @@ package pl.danceclub.app.domain.teacher;
 
 import jakarta.persistence.*;
 import pl.danceclub.app.domain.genre.Genre;
+import pl.danceclub.app.domain.rating.Rating;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Teacher {
@@ -19,6 +23,9 @@ public class Teacher {
     @ManyToOne
     @JoinColumn(name = "genre_id", referencedColumnName="id")
     private Genre genre;
+
+    @OneToMany(mappedBy = "teacher")
+    private Set<Rating> ratings = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -90,5 +97,13 @@ public class Teacher {
 
     public void setGenre(Genre genre) {
         this.genre = genre;
+    }
+
+    public Set<Rating> getRatings() {
+        return ratings;
+    }
+
+    public void setRatings(Set<Rating> ratings) {
+        this.ratings = ratings;
     }
 }
