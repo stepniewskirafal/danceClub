@@ -340,6 +340,51 @@ i powinna zajmować większość dostępnej przestrzeni
     margin-bottom: 8px;
 }
 
+
+/*Listing START*/
+/*Nagłówek*/
+.list-heading,
+.list-description {
+    text-align: center;
+    margin: 16px 0;
+}
+/*Usunięcie dekoracji elementów listy (kropki na początku)*/
+.teacher-list {
+    list-style-type: none;
+}
+/*Margines i ramka wokół pojedynczego filmu*/
+.teacher-list-item {
+    margin-bottom: 16px;
+    display: flex;
+    border: 1px #6d6d6d solid;
+}
+/*Plakat - usuniecie paddingu*/
+.teacher-list-item-poster {
+    display: block;
+    max-width: 200px;
+}
+/*Karta filmu*/
+.teacher-list-item-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+}
+.teacher-list-item-content > * {
+    margin: 8px 0;
+}
+.teacher-list-item-title {
+    font-size: 1.6rem;
+}
+.teacher-list-item-rating {
+    font-size: 1.6rem;
+}
+/*Listing END*/
+
+
+
+
+
 /*Responsive school.html*/
 @media only screen and (min-width: 992px) {
     /*Dodajemy rozkład elastyczny, elementy będą wyświetlane w jednym wierszu*/

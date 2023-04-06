@@ -45,6 +45,8 @@ public class TeacherController {
     public String getGenres(Model model){
         List<TeacherDto> teacherDtoList = teacherService.findAll();
         model.addAttribute("teachers", teacherDtoList);
+        model.addAttribute("heading", "Instruktorzy");
+        model.addAttribute("description", "Zapoznaj się z ludźmi których pasją jest taniec");
         return "teacher-listing";
     }
 }
