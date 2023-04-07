@@ -1,0 +1,17 @@
+pl.danceclub.app
+pl.danceclub.app.domain.comment
+pl.danceclub.app.domain.comment.dto
+pl.danceclub.app.domain.genre
+pl.danceclub.app.domain.genre.dto
+pl.danceclub.app.domain.rating
+pl.danceclub.app.domain.school
+pl.danceclub.app.domain.school.Dto
+pl.danceclub.app.domain.teacher
+pl.danceclub.app.domain.teacher.dto
+pl.danceclub.app.domain.unit
+pl.danceclub.app.domain.unit.dto
+pl.danceclub.app.storage
+pl.danceclub.app.user
+pl.danceclub.app.user.dto
+pl.danceclub.app.web
+pl.danceclub.app.web.admin
