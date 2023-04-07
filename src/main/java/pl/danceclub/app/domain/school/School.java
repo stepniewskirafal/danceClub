@@ -12,6 +12,7 @@ public class School {
     private Long id;
     private String name;
     private String address;
+    private String addressGmaps;
     private String description;
     private String poster;
 
@@ -37,6 +38,14 @@ public class School {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getAddressGmaps() {
+        return addressGmaps;
+    }
+
+    public void setAddressGmaps(String addressGmaps) {
+        this.addressGmaps = addressGmaps;
     }
 
     public String getDescription() {
