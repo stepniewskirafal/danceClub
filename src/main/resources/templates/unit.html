@@ -97,6 +97,61 @@
                 Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.
                 Donec lacinia congue felis in faucibus.</p>
         </section>
+
+        <!-- sekcja komentarzy -->
+        <section class="unit-section" sec:authorize="isAuthenticated()">
+            <h2 class="unit-section-heading">Sekcja komentarzy</h2>
+
+            <ul class="dance-list"  th:remove="all-but-first">
+                <!-- Pętla po wszystkich komentarzach z modelu -->
+                <li class="dance-list-item" th:each="comment : ${comments}">
+                    <div class="dance-list-item-card">
+                        <div class="dance-list-item-content">
+                            <!-- Komentarz -->
+                            <h4 class="unit-summary-item" th:text="${comment.comment}">
+                                Świetna strona internetowa! Bardzo łatwo się na niej poruszać.
+                            </h4>
+                            <!-- nazwa usera -->
+                            <p th:text="${comment.userName}">- Jan Kowalski</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="dance-list-item">
+                    <div class="dance-list-item-card">
+                        <div class="dance-list-item-content">
+                            <!-- Komentarz -->
+                            <h4 class="unit-summary-item">
+                                Świetna strona internetowa! Bardzo łatwo się na niej poruszać.
+                            </h4>
+                            <!-- nazwa usera -->
+                            <p>- Jan Kowalski</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="dance-list-item">
+                    <div class="dance-list-item-card">
+                        <div class="dance-list-item-content">
+                            <!-- Komentarz -->
+                            <h4 class="unit-summary-item">
+                                Świetna strona internetowa! Bardzo łatwo się na niej poruszać.
+                            </h4>
+                            <!-- nazwa usera -->
+                            <p>- Jan Kowalski</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <form action="#" th:action="@{/comment-unit}" method="post"
+                  class="mc-form">
+                <input type="hidden" name="unitId" th:value="${unit.id}">
+                <label for="comment">Twój komentarz:</label>
+                <textarea id="comment" name="comment"  rows="3" required></textarea>
+
+                <button type="submit">Dodaj komentarz</button>
+            </form>
+        </section>
+
     </main>
 </div>
 </body>

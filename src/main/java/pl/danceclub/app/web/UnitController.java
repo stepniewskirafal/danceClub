@@ -7,6 +7,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.server.ResponseStatusException;
+import pl.danceclub.app.domain.comment.CommentService;
+import pl.danceclub.app.domain.comment.dto.CommentDto;
 import pl.danceclub.app.domain.rating.RatingService;
 import pl.danceclub.app.domain.unit.UnitService;
 import pl.danceclub.app.domain.unit.dto.UnitDto;
@@ -17,10 +19,12 @@ import java.util.List;
 public class UnitController {
     private final UnitService unitService;
     private final RatingService ratingService;
+    private final CommentService commentService;
 
-    public UnitController(UnitService unitService, RatingService ratingService) {
+    public UnitController(UnitService unitService, RatingService ratingService, CommentService commentService) {
         this.unitService = unitService;
         this.ratingService = ratingService;
+        this.commentService = commentService;
     }
 
     @GetMapping("/unit/{id}")
@@ -38,6 +42,10 @@ public class UnitController {
             //i zapisujemy go w modelu
             model.addAttribute("userRating", rating);
         }
+
+        List<CommentDto> commentList = commentService.getAllUnitComment(id);
+        model.addAttribute("comments", commentList);
+
         return "unit";
     }
 
