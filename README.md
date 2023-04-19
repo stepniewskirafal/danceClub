@@ -11,4 +11,4 @@ Two profiles were created: development and production, which differ in the datab
 
 The application's UI was created using **Thymeleaf, HTML, some JavaScript, and CSS**. Thanks to the use of **Flexbox**, the page is responsive and adapts to all screen sizes.
 
-The entire application is connected using Spring MVC, and it is secured using Spring Security. The configuration is based on **Spring Boot**.
+The entire application is connected using **Spring MVC**, and it is secured using **Spring Security**. The configuration is based on **Spring Boot**.
